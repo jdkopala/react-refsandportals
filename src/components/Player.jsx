@@ -6,6 +6,9 @@ export default function Player() {
 
   function handleClick() {
     setNameEntry(playerName.current.value);
+    // Not an ideal practice, React should be the one manipulating the DOM to keep state consistent
+    // This instance is ok, as we are just clearing one piece that is not tied to any state very tightly.
+    playerName.current.value = '';
   };
 
   return (
