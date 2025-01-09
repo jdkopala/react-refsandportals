@@ -18,12 +18,12 @@ const ResultModal = forwardRef(function ResultModal({ targetTime, timeRemaining,
     });
 
     return (
-        <dialog ref={dialog} className="result-modal">
+        <dialog ref={dialog} className="result-modal" onClose={onReset}>
             {userLost && <h2>You Lost!</h2>}
             {!userLost && <h2>Your Score: {score}</h2>}
             <p>The target time was <strong>{targetTime} seconds</strong></p>
             <p>You stopped the timer with <strong>{formattedTimeRemaining} seconds left.</strong></p>
-            <form method="dialog" onSubmit={onReset}>
+            <form method="dialog">
                 <button>Close</button>
             </form>
         </dialog>
